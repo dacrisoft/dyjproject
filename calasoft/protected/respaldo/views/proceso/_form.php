@@ -1,0 +1,36 @@
+<?php
+/* @var $this ProcesoController */
+/* @var $model Proceso */
+/* @var $form CActiveForm */
+?>
+
+<div class="form">
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'proceso-form',
+	'enableAjaxValidation'=>false,
+)); ?>
+
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
+
+	<?php echo $form->errorSummary($model); ?>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'nombreProceso'); ?>
+		<?php echo $form->textField($model,'nombreProceso',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'nombreProceso'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'descripcion'); ?>
+		<?php echo $form->textField($model,'descripcion',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'descripcion'); ?>
+	</div>
+
+	<div class="row buttons">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	</div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- form -->
